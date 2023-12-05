@@ -1,13 +1,12 @@
 mod util;
 
-use futures::executor::block_on;
 use util::structs::{IpInformation, FailedResponse};
 use serde_json::Value;
 
-pub async fn get_ip_info(ip: String) -> Result<IpInformation, FailedResponse> {
+pub fn get_ip_info(ip: String) -> Result<IpInformation, FailedResponse> {
 
 
-    let response = match ureq::get("https://funkemunky.cc/vpn?").query("ip", ip.as_str()).call() {
+    let response = match ureq::get("https://funkemunky.cc/vpn").query("ip", ip.as_str()).call() {
         Ok(response) => response,
         Err(_) => {
             return Err(FailedResponse {
@@ -77,19 +76,13 @@ pub async fn get_ip_info(ip: String) -> Result<IpInformation, FailedResponse> {
     Ok(ip_info)
 }
 
-pub fn blocking_get_ip_info(ip: String) -> Result<IpInformation, FailedResponse> {
-    let response = get_ip_info(ip);
-
-    return block_on(response);
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn it_works() {
-        let response = match blocking_get_ip_info("192.168.1.1".to_string()) {
+        let response = match get_ip_info("192.168.1.1".to_string()) {
             Ok(response) => response,
             Err(err) => {
                 panic!("Failed to fetch IP information: {}", err.reason);
