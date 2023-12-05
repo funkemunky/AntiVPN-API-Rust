@@ -1,0 +1,5 @@
+/target
+/Cargo.lock
+/.idea/IsItBadAPI-Rust.iml
+/.idea/modules.xml
+/.idea/vcs.xml
