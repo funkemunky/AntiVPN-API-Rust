@@ -31,5 +31,6 @@ pub struct IpInformation {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct FailedResponse {
     pub success: bool,
+    #[serde(rename = "failureReason")]
     pub reason: String
 }
