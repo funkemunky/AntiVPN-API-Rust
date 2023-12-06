@@ -1,5 +1,6 @@
 # AntiVPN-API-Rust
 This is a Rust implementation of the IsItBad API, currently hosted on https://funkemunky.cc.
+
 Git: https://github.com/funkemunky/AntiVPN-API-Rust/ 
 
 ## Usage
