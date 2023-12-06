@@ -4,6 +4,11 @@ This is a Rust implementation of the IsItBad API, currently hosted on https://fu
 ## Usage
 You can provide either an IPv4 or IPv6 to check.
 
+### Add crate to your project
+```bash
+cargo add isitbad_api
+```
+
 ### Checking an IP for a Proxy
 ```rust
 use isitbad_api::get_ip_info;
