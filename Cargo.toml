@@ -1,6 +1,6 @@
 [package]
 name = "isitbad_api"
-version = "0.1.0"
+version = "1.0.0"
 description = "A simple API wrapper for https://funkemunky.cc Kauri VPN's IsItBad API"
 edition = "2021"
 license-file = "LICENSE"
